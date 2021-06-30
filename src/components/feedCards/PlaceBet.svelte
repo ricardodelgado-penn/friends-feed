@@ -2,10 +2,11 @@
 import FButton from '../FButton.svelte';
 import IconAndTitle from './components/IconAndTitle.svelte';
 import ThumbsUpFooter from './components/ThumbsUpFooter.svelte';
+import TimeAgoStamp from './components/TimeAgoStamp.svelte';
 </script>
 
 <section class="place-bet">
-  <header class="header font-body-2">14 Mins Ago</header>
+  <TimeAgoStamp />
 
   <IconAndTitle>
     <span slot="icon">Icon</span>
@@ -36,7 +37,6 @@ import ThumbsUpFooter from './components/ThumbsUpFooter.svelte';
 
 <style>
 
-.place-bet .header,
 .place-bet .details {
   margin-bottom: 0.875rem;
 }
