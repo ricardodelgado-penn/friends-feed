@@ -45,7 +45,9 @@ import TimeAgoStamp from './components/TimeAgoStamp.svelte';
     <span slot="count">34</span>
   </ThumbsUpFooter>
 </div>
+
 <style>
+
 .lower-win-bet {
   line-height: 1.65;
   padding: 16px;

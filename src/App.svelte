@@ -31,7 +31,19 @@ onMount(() => {
 </script>
 
 <main>
-	<FeedCard/>
+  <FeedCard cardType="join_game"/>
+
+  <FeedCard cardType="odds_boost"/>
+
+  <FeedCard cardType="place_bet"/>
+
+  <FeedCard cardType="play_game"/>
+
+  <FeedCard cardType="promotion"/>
+
+  <FeedCard cardType="tweet"/>
+
+  <FeedCard cardType="win_bet"/>
 </main>
 
 <style>
