@@ -21,8 +21,14 @@ import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
   </div>
 
   <ThumbsUpFooter>
-    <span name="count">
+    <span slot="count">
       26
     </span>
   </ThumbsUpFooter>
 </section>
+
+<style>
+.join-game .join-link {
+  margin-bottom: 0.875rem;
+}
+</style>
