@@ -2,7 +2,7 @@
   export let click
 </script>
 
-<button class="button" on:click={click}>
+<button on:click={click} class="button">
   <slot></slot>
 </button>
 

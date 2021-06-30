@@ -1,6 +1,6 @@
 <script>
 import FButton from '../FButton.svelte';
-import FilledThumbsUpIcon from '../../assets/icons/thumbs-up.svelte'
+import FilledThumbsUpIcon from '../../assets/icons/filled-thumbs-up.svelte'
 </script>
 
 <section class="place-bet">
@@ -12,14 +12,15 @@ import FilledThumbsUpIcon from '../../assets/icons/thumbs-up.svelte'
     <span>User1234 Has Placed a Bet</span>
   </div>
 
-  <div class="details font-body-2">
+  <div class="details">
     <div class="left">
-      <div>PHI 76ers @ BKN Nets</div>
-      <div>POINT SPREAD, PHI 76ers -1.5</div>
+      <div class="font-body-2">PHI 76ers @ BKN Nets</div>
+      <div class="font-button">POINT SPREAD</div>
+      <div class="font-body-2">PHI 76ers -1.5</div>
     </div>
 
     <div class="action">
-      <FButton click={}>
+      <FButton>
         Odds
       </FButton>
     </div>
@@ -35,13 +36,14 @@ import FilledThumbsUpIcon from '../../assets/icons/thumbs-up.svelte'
 <style>
 
 .place-bet .header,
-.place-bet .title-row {
+.place-bet .title-row,
+.place-bet .details {
   margin-bottom: 0.875rem;
 }
 
 .place-bet .details {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto;
   gap: 15px;
 }
 </style>
