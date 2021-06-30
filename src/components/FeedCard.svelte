@@ -7,7 +7,7 @@ import PromotionCard from './feedCards/PromotionCard.svelte';
 import TweetCard from './feedCards/TweetCard.svelte';
 import WinBet from './feedCards/WinBet.svelte';
 
-export let cardType = 'promotion'
+export let cardType = 'tweet'
 </script>
 
 <article class="feed-card">

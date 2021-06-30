@@ -39,6 +39,10 @@ input:disabled {
 	color: #ccc;
 }
 
+a {
+	text-decoration: none;
+}
+
 button {
 	color: #333;
 	background-color: #f4f4f4;
