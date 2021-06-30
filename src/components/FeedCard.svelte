@@ -7,7 +7,7 @@ import PromotionCard from './feedCards/PromotionCard.svelte';
 import TweetCard from './feedCards/TweetCard.svelte';
 import WinBet from './feedCards/WinBet.svelte';
 
-export let cardType = 'place_bet'
+export let cardType = 'join_game'
 </script>
 
 <article class="feed-card">
@@ -48,6 +48,6 @@ export let cardType = 'place_bet'
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   padding: 20px;
   max-width: 100%;
-  width: 420px;
+  width: 288px;
 }
 </style>
