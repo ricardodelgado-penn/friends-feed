@@ -1,12 +1,28 @@
 <script>
+import {Socket} from 'phoenix-socket'
+
 import FButton from "../FButton.svelte";
 
 const getWs = () => {
-  const ws = new WebSocket('ws://19f6e02fac60.ngrok.io/socket/websocket?token=undefined&vsn=2.0.0')
-  
-  ws.onmessage = resp => console.log({ messageResp: resp })
+  const socket = new Socket('ws://19f6e02fac60.ngrok.io/socket/websocket?token=undefined&vsn=2.0.0')
 
-  ws.onopen = resp => console.log({ openResp: resp })
+  socket.connect()
+  
+  console.log({ socket })
+  let channel = socket.channel("feed:all", {})
+  channel.join()
+    .receive("ok", resp => {
+      console.log("Joined successfully", resp)
+      resp.events.forEach(element => {
+        addEvent(element)
+      });
+    })
+    .receive("error", resp => { console.log("Unable to join", resp) })
+
+  channel.on("new_event", resp => {
+    console.log("New Event", resp)
+    addEvent(resp.event)
+  })
 }
 </script>
 
