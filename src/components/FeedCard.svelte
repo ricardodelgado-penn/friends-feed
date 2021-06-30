@@ -7,10 +7,14 @@ import PromotionCard from './feedCards/PromotionCard.svelte';
 import TweetCard from './feedCards/TweetCard.svelte';
 import WinBet from './feedCards/WinBet.svelte';
 
-export let cardType = 'tweet'
+export let cardType = 'win_bet'
+
+const feedCardClasses = ['feed-card']
+
+$: if (cardType === 'win_bet') feedCardClasses.push('no-margin')
 </script>
 
-<article class="feed-card">
+<article class={feedCardClasses.join(' ')}>
   {#if cardType === 'place_bet'}
     <PlaceBet />
   {/if}
@@ -41,12 +45,20 @@ export let cardType = 'tweet'
 </article>
 
 <style>
-.feed-card {
+  
+  .feed-card {
+    --feed-card-padding: 16px;
+  }
+
+  .no-margin {
+    --feed-card-padding: 0;
+  }
+  .feed-card {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: var(--feed-card-padding);
   max-width: 100%;
   width: 288px;
 }

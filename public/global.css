@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'CooperHewitt-HeavyItalic';
-  src: url('../src/assets/styles/fonts/CooperHewitt-HeavyItalic.otf');
+  src: url('./fonts/CooperHewitt-HeavyItalic.otf');
 }
 
 html, body {
