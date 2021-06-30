@@ -22,7 +22,7 @@ import TimeAgoStamp from './components/TimeAgoStamp.svelte';
     </div>
 
     <div class="action">
-      <FButton>
+      <FButton odds>
         Odds
       </FButton>
     </div>

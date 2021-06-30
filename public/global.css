@@ -136,3 +136,7 @@ button:focus {
 .font-bold {
 	font-weight: 700;
 }
+
+.font-upper {
+	text-transform: uppercase;
+}
