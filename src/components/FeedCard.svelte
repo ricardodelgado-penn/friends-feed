@@ -7,7 +7,7 @@ import PromotionCard from './feedCards/PromotionCard.svelte';
 import TweetCard from './feedCards/TweetCard.svelte';
 import WinBet from './feedCards/WinBet.svelte';
 
-export let cardType = 'join_game'
+export let cardType = 'odds_boost'
 </script>
 
 <article class="feed-card">

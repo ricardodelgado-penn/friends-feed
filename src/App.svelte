@@ -25,7 +25,7 @@ onMount(() => {
 
   channel.on("new_event", resp => {
     console.log("New Event", resp)
-    addEvent(resp.event)
+    console.log(resp.event)
   })	
 })
 </script>
