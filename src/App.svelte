@@ -3,6 +3,8 @@ import { onMount } from 'svelte'
 import {Socket} from 'phoenix-socket'
 import { events as storeEvents } from './store/events.js'
 import FeedCard from './components/FeedCard.svelte'
+import FeedHeader from './components/FeedHeader.svelte'
+import FeedTabs from './components/FeedTabs.svelte'
 
 let feedItems = []
 
@@ -19,11 +21,11 @@ onMount(() => {
     .receive('ok', ({ events }) => {
       feedItems = events
       storeEvents.update(e => feedItems)
+      visible = true
     })
     .receive('error', resp => { console.log('Unable to join', resp) })
 
   channel.on('new_event', ({ event }) => {
-    console.log('New Event', event)
     feedItems = [event, ...feedItems]
     storeEvents.update(e => feedItems)
   })
@@ -31,30 +33,21 @@ onMount(() => {
 </script>
 
 <main>
+  <FeedHeader>
+    <FeedTabs />
+  </FeedHeader>
+
   {#each feedItems as event (`${event.id}-${Math.random() * 100}`) }
     <FeedCard
       cardType={event.type}
       event={event} />
   {/each}
-
-  <!-- <FeedCard cardType="join_game"/>
-
-  <FeedCard cardType="odds_boost"/>
-
-  <FeedCard cardType="place_bet"/>
-
-  <FeedCard cardType="play_game"/>
-
-  <FeedCard cardType="promotion"/>
-
-  <FeedCard cardType="tweet"/>
-
-  <FeedCard cardType="win_bet"/> -->
 </main>
 
 <style>
 	main {
 		display: flex;
 		flex-direction: column;
+    width: 288px;
 	}
 </style>
