@@ -8,7 +8,7 @@
 </script>
 
 <section class="place-bet">
-  <TimeAgoStamp />
+  <TimeAgoStamp timestamp={event.timestamp} />
 
   <IconAndTitle>
     <span slot="icon"

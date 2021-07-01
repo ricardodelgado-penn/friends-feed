@@ -7,7 +7,7 @@
 </script>
 
 <div class="upper-win-card">
-  <TimeAgoStamp />
+  <TimeAgoStamp timestamp={event.timestamp} />
 
   <IconAndTitle>
     <span slot="icon"

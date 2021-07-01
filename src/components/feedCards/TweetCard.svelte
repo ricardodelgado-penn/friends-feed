@@ -6,7 +6,7 @@
   export let event;
 </script>
 
-<TimeAgoStamp />
+<TimeAgoStamp timestamp={event.timestamp} />
 
 <IconAndTitle>
   <span slot="icon"

@@ -21,37 +21,35 @@
   $: if (noMarginCards.includes(cardType)) feedCardClasses.push("no-margin");
 </script>
 
-{#if mounted}
-  <article in:fade class={feedCardClasses.join(" ")}>
-    {#if cardType === "place_bet"}
-      <PlaceBet {event} />
-    {/if}
-
-    {#if cardType === "win_bet"}
-      <WinBet {event} />
-    {/if}
-
-    {#if cardType === "play_game"}
-      <PlayGame {event} />
-    {/if}
-
-    {#if cardType === "join_game"}
-      <JoinGame {event} />
-    {/if}
-
-    {#if cardType === "odds_boost"}
-      <OddsBoost {event} />
-    {/if}
-
-    {#if cardType === "promotion"}
-      <PromotionCard {event} />
-    {/if}
-
-    {#if cardType === "tweet"}
-      <TweetCard {event} />
-    {/if}
-  </article>
+<article class={feedCardClasses.join(" ")}>
+  {#if cardType === "place_bet"}
+    <PlaceBet {event} />
   {/if}
+
+  {#if cardType === "win_bet"}
+    <WinBet {event} />
+  {/if}
+
+  {#if cardType === "play_game"}
+    <PlayGame {event} />
+  {/if}
+
+  {#if cardType === "join_game"}
+    <JoinGame {event} />
+  {/if}
+
+  {#if cardType === "odds_boost"}
+    <OddsBoost {event} />
+  {/if}
+
+  {#if cardType === "promotion"}
+    <PromotionCard {event} />
+  {/if}
+
+  {#if cardType === "tweet"}
+    <TweetCard {event} />
+  {/if}
+</article>
 
 <style>
   .feed-card {

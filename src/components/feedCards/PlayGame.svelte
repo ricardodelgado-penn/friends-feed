@@ -7,7 +7,7 @@
 </script>
 
 <div class="header-info">
-  <TimeAgoStamp />
+  <TimeAgoStamp timestamp={event.timestamp} />
   <IconAndTitle>
     <span slot="icon"
       ><img class="avatar" src="/img/{event.username}.png" alt="Profile" /></span

@@ -39,6 +39,7 @@
   </FeedHeader>
 
   {#each feedItems as event (`${event.id}-${Math.random() * 100}`)}
+    {event.type}
     <FeedCard cardType={event.type} {event} />
   {/each}
 </main>

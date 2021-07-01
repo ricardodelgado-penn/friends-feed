@@ -8,7 +8,7 @@
 
 <section class="join-game">
   <div class="header-info">
-    <TimeAgoStamp />
+    <TimeAgoStamp timestamp={event.timestamp} />
     <IconAndTitle>
       <span slot="icon"
         ><img

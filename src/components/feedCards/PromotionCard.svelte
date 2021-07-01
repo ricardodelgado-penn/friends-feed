@@ -2,7 +2,6 @@
   import FButton from "../FButton.svelte";
 
   const goTo = (url) => {
-    console.log({ url });
     window.location.href = url;
   };
 
