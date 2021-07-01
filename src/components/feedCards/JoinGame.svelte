@@ -1,8 +1,8 @@
 <script>
-import IconAndTitle from "./components/IconAndTitle.svelte";
-import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
+  import IconAndTitle from "./components/IconAndTitle.svelte";
+  import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
 
-export let event
+  export let event;
 </script>
 
 <section class="join-game">
@@ -17,7 +17,7 @@ export let event
   </IconAndTitle>
 
   <div class="join-link">
-    <a href="{event.deeplink_url}">Join Now</a>
+    <a href={event.deeplink_url} target="_parent">Join Now</a>
   </div>
 
   <ThumbsUpFooter>
@@ -28,7 +28,7 @@ export let event
 </section>
 
 <style>
-.join-game .join-link {
-  margin-bottom: 0.875rem;
-}
+  .join-game .join-link {
+    margin-bottom: 0.875rem;
+  }
 </style>
