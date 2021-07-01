@@ -1,9 +1,11 @@
 <script>
     export let increaseCount
+    export let decreaseCount
 
     const click = () => {
+        selected ? decreaseCount() : increaseCount()
+
         selected = !selected
-        increaseCount()
     }
 
     let selected = false

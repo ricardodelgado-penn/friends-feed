@@ -36,11 +36,7 @@
       <a href={event.deeplink_url} target="_parent">Join Now</a>
     </div>
   
-    <ThumbsUpFooter>
-      <span slot="count">
-        {event.likes}
-      </span>
-    </ThumbsUpFooter>
+    <ThumbsUpFooter count={event.likes} />
   </div>
 </section>
 

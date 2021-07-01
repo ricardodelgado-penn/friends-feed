@@ -25,21 +25,19 @@
   <div class="details">
     <div class="left">
       <div class="font-caption">{event.data[0]}</div>
-      <div class="font-caption font-bold">{event.data[1].split(", ")[0]}</div>
-      <div class="font-caption">{event.data[1].split(", ")[1]}</div>
+      <div class="font-caption font-bold">{event.data[1]}</div>
+      <div class="font-caption">{event.data[2]}</div>
     </div>
 
     <div class="action">
       <FButton odds>
-        {event.data[2]}
+        {event.data[3]}
       </FButton>
     </div>
   </div>
 
   <footer class="footer">
-    <ThumbsUpFooter>
-      <span slot="count">{event.likes}</span>
-    </ThumbsUpFooter>
+    <ThumbsUpFooter count={event.likes} />
   </footer>
 </section>
 

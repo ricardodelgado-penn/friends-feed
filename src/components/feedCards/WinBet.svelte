@@ -30,13 +30,13 @@
   <div class="row">
     <span class="font-upper font-subtitle-1 font-bold">Won</span>
 
-    <span class="font-subtitle-2">{event.data[2]}</span>
+    <span class="font-subtitle-2">{event.data[4]}</span>
   </div>
 </div>
 
 <div class="lower-win-bet font-caption">
   <div>
-    {event.data[2]}
+    {event.data[0]}
   </div>
 
   <div class="win-bet-detail">
@@ -49,9 +49,7 @@
     <span class="odds">+698</span>
   </div>
 
-  <ThumbsUpFooter>
-    <span slot="count">34</span>
-  </ThumbsUpFooter>
+  <ThumbsUpFooter count={event.likes} />
 </div>
 
 <style>
