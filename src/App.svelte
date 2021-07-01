@@ -21,7 +21,6 @@
       .receive("ok", ({ events }) => {
         feedItems = events;
         storeEvents.update((e) => feedItems);
-        visible = true;
       })
       .receive("error", (resp) => {
         console.log("Unable to join", resp);
@@ -40,7 +39,6 @@
   </FeedHeader>
 
   {#each feedItems as event (`${event.id}-${Math.random() * 100}`)}
-    {event.type}
     <FeedCard cardType={event.type} {event} />
   {/each}
 </main>

@@ -4,7 +4,6 @@
   import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
   export let event;
-  console.log({ event });
 </script>
 
 <TimeAgoStamp />

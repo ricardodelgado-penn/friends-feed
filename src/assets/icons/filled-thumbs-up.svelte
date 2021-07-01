@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
     <g fill="none" fill-rule="evenodd">
-        <g fill="#C58E01">
+        <g fill="currentColor">
             <g>
                 <g>
                     <g>

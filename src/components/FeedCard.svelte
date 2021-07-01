@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte"
+  import { fade } from "svelte/transition"
   import JoinGame from "./feedCards/JoinGame.svelte";
   import OddsBoost from "./feedCards/OddsBoost.svelte";
   import PlaceBet from "./feedCards/PlaceBet.svelte";
@@ -12,39 +14,44 @@
 
   const feedCardClasses = ["feed-card"];
   const noMarginCards = ["win_bet", "promotion", "play_game", "join_game"]
+  let mounted = false
+
+  onMount(() => setTimeout(() => mounted = true, 200))
 
   $: if (noMarginCards.includes(cardType)) feedCardClasses.push("no-margin");
 </script>
 
-<article class={feedCardClasses.join(" ")}>
-  {#if cardType === "place_bet"}
-    <PlaceBet {event} />
-  {/if}
+{#if mounted}
+  <article in:fade class={feedCardClasses.join(" ")}>
+    {#if cardType === "place_bet"}
+      <PlaceBet {event} />
+    {/if}
 
-  {#if cardType === "win_bet"}
-    <WinBet {event} />
-  {/if}
+    {#if cardType === "win_bet"}
+      <WinBet {event} />
+    {/if}
 
-  {#if cardType === "play_game"}
-    <PlayGame {event} />
-  {/if}
+    {#if cardType === "play_game"}
+      <PlayGame {event} />
+    {/if}
 
-  {#if cardType === "join_game"}
-    <JoinGame {event} />
-  {/if}
+    {#if cardType === "join_game"}
+      <JoinGame {event} />
+    {/if}
 
-  {#if cardType === "odds_boost"}
-    <OddsBoost {event} />
-  {/if}
+    {#if cardType === "odds_boost"}
+      <OddsBoost {event} />
+    {/if}
 
-  {#if cardType === "promotion"}
-    <PromotionCard {event} />
-  {/if}
+    {#if cardType === "promotion"}
+      <PromotionCard {event} />
+    {/if}
 
-  {#if cardType === "tweet"}
-    <TweetCard {event} />
+    {#if cardType === "tweet"}
+      <TweetCard {event} />
+    {/if}
+  </article>
   {/if}
-</article>
 
 <style>
   .feed-card {
