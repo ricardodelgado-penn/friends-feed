@@ -16,22 +16,21 @@
   />
 </figure>
 
-<p class="font-body-2">
-  {event.username}
-  {event.title}
-
-  ** Mock ** Players who opt-in, for every $50 wager on Blackjack, will receive
-  $5 casino bonus cash, up to $50.
-</p>
-
-<div class="end-date font-caption font-upper">ends 06/21/21</div>
-
-<div class="action-row">
-  <FButton block outline click={() => goTo(event.deeplink_url)}>
-    More Info
-  </FButton>
-
-  <FButton block>Opt In</FButton>
+<div class="promo-details">
+  <p class="font-body-2">
+    {event.username}
+    {event.title}
+  </p>
+  
+  <div class="end-date font-caption font-upper">ends 06/21/21</div>
+  
+  <div class="action-row">
+    <FButton block outline click={() => goTo(event.deeplink_url)}>
+      More Info
+    </FButton>
+  
+    <FButton block>Opt In</FButton>
+  </div>
 </div>
 
 <style>
@@ -46,12 +45,20 @@
   }
 
   figure {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
     padding: 0;
-    margin: -14px;
-    margin-bottom: 10px;
-    width: 410px;
+    max-width: 410px;
+    width: 100%;
   }
   figure img {
     width: 100%;
+  }
+
+  .promo-details {
+    padding: 0 16px;
   }
 </style>

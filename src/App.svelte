@@ -28,8 +28,8 @@
       });
 
     channel.on("new_event", ({ event }) => {
-      feedItems = [event, ...feedItems];
-      storeEvents.update((e) => feedItems);
+      // feedItems = [event, ...feedItems];
+      // storeEvents.update((e) => feedItems);
     });
   });
 </script>
@@ -40,6 +40,7 @@
   </FeedHeader>
 
   {#each feedItems as event (`${event.id}-${Math.random() * 100}`)}
+    {event.type}
     <FeedCard cardType={event.type} {event} />
   {/each}
 </main>

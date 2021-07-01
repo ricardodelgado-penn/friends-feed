@@ -7,18 +7,21 @@
 </script>
 
 <section class="join-game">
-  <TimeAgoStamp />
-  <IconAndTitle>
-    <span slot="icon"
-      ><img
-        class="avatar"
-        src="/img/{event.username}.png"
-        alt="Profile"
-      /></span
-    >
+  <div class="header-info">
+    <TimeAgoStamp />
+    <IconAndTitle>
+      <span slot="icon"
+        ><img
+          class="avatar"
+          src="/img/{event.username}.png"
+          alt="Profile"
+        /></span
+      >
 
-    <span slot="title">{event.username} {event.title}</span>
-  </IconAndTitle>
+      <span slot="title">{event.username} {event.title}</span>
+    </IconAndTitle>
+  </div>
+
   <div class="header-image">
     <figure>
       <img
@@ -28,27 +31,39 @@
     </figure>
   </div>
 
-  <div class="join-link">
-    <a href={event.deeplink_url} target="_parent">Join Now</a>
+  <div class="join-game-details">
+    <div class="join-link">
+      <a href={event.deeplink_url} target="_parent">Join Now</a>
+    </div>
+  
+    <ThumbsUpFooter>
+      <span slot="count">
+        {event.likes}
+      </span>
+    </ThumbsUpFooter>
   </div>
-
-  <ThumbsUpFooter>
-    <span slot="count">
-      {event.likes}
-    </span>
-  </ThumbsUpFooter>
 </section>
 
 <style>
+  .header-info {
+    padding: 16px 16px 0;
+  }
+  .join-game-details {
+    padding: 0 16px 16px;
+  }
   .join-game .join-link {
     margin-bottom: 0.875rem;
   }
   figure {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
     padding: 0;
-    margin: -14px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 410px;
+    margin: 10px auto;
+    max-width: 410px;
+    width: 100%;
   }
   figure img {
     width: 100%;

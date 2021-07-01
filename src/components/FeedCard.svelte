@@ -11,8 +11,9 @@
   export let event;
 
   const feedCardClasses = ["feed-card"];
+  const noMarginCards = ["win_bet", "promotion", "play_game", "join_game"]
 
-  $: if (cardType === "win_bet") feedCardClasses.push("no-margin");
+  $: if (noMarginCards.includes(cardType)) feedCardClasses.push("no-margin");
 </script>
 
 <article class={feedCardClasses.join(" ")}>
