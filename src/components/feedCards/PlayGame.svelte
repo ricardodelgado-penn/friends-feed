@@ -3,6 +3,7 @@ import IconAndTitle from "./components/IconAndTitle.svelte";
 import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
 import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
+export let event
 </script>
 
 <TimeAgoStamp />
@@ -10,23 +11,23 @@ import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 <IconAndTitle>
   <icon>Icon</icon>
 
-  <span slot="title">AlSmith achieved a high score</span>
+  <span slot="title">{event.username} {event.title}</span>
 </IconAndTitle>
 
 <div class="content font-caption">
   <span class="font-bold">
-    Blackjack,
+    Blackjack, (missing)
   </span>
 
-  Top Rated
+  Top Rated (missing)
 </div>
 
 <div class="play-link">
-  <a href="test">Play Now</a>
+  <a href="{event.deeplink_url}">Play Now</a>
 </div>
 
 <ThumbsUpFooter>
-  <span slot="count">24</span>
+  <span slot="count">{event.likes}</span>
 </ThumbsUpFooter>
 
 <style>

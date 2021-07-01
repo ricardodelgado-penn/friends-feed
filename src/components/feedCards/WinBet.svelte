@@ -2,6 +2,8 @@
 import IconAndTitle from './components/IconAndTitle.svelte';
 import ThumbsUpFooter from './components/ThumbsUpFooter.svelte';
 import TimeAgoStamp from './components/TimeAgoStamp.svelte';
+
+export let event
 </script>
 
 <div class="upper-win-card">
@@ -10,29 +12,29 @@ import TimeAgoStamp from './components/TimeAgoStamp.svelte';
   <IconAndTitle>
     <span slot="icon">Icon</span>
 
-    <span slot="title">JaneDoe12 has won a bet!</span>
+    <span slot="title">{event.username} {event.title}</span>
   </IconAndTitle>
 
   <div class="row wagered font-caption">
     <span class="font-upper">Wagered</span>
 
-    <span>$120.00</span>
+    <span>{event.data[3]}</span>
   </div>
 
   <div class="row">
     <span class="font-upper font-subtitle-1 font-bold">Won</span>
 
-    <span class="font-subtitle-2">+$837.66</span>
+    <span class="font-subtitle-2">{event.data[2]}</span>
   </div>
 </div>
 
 <div class="lower-win-bet font-caption">
   <div>
-    MTL Canadiens @ TB Lightning
+    {event.data[2]}
   </div>
   
   <div class="win-bet-detail">
-    TO SCORE AT LEAST 2 POINTS - INC. OT
+    {event.data[1]}
   </div>
 
   <div class="row odds-row">

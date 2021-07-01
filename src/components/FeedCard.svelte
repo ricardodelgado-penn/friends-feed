@@ -8,6 +8,7 @@ import TweetCard from './feedCards/TweetCard.svelte';
 import WinBet from './feedCards/WinBet.svelte';
 
 export let cardType = 'place_bet'
+export let event
 
 const feedCardClasses = ['feed-card']
 
@@ -16,31 +17,31 @@ $: if (cardType === 'win_bet') feedCardClasses.push('no-margin')
 
 <article class={feedCardClasses.join(' ')}>
   {#if cardType === 'place_bet'}
-    <PlaceBet />
+    <PlaceBet event={event} />
   {/if}
 
   {#if cardType === 'win_bet'}
-    <WinBet />
+    <WinBet event={event} />
   {/if}
 
   {#if cardType === 'play_game'}
-    <PlayGame />
+    <PlayGame event={event} />
   {/if}
 
   {#if cardType === 'join_game'}
-    <JoinGame />
+    <JoinGame event={event} />
   {/if}
 
   {#if cardType === 'odds_boost'}
-    <OddsBoost />
+    <OddsBoost event={event} />
   {/if}
 
   {#if cardType === 'promotion'}
-    <PromotionCard />
+    <PromotionCard event={event} />
   {/if}
 
   {#if cardType === 'tweet'}
-    <TweetCard />
+    <TweetCard event={event} />
   {/if}
 </article>
 

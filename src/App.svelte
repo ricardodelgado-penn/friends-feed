@@ -1,8 +1,10 @@
 <script>
 import { onMount } from 'svelte'
 import {Socket} from 'phoenix-socket'
-
+import { events as storeEvents } from './store/events.js'
 import FeedCard from './components/FeedCard.svelte'
+
+let feedItems = []
 
 onMount(() => {
 	const socket = new Socket(
@@ -12,26 +14,30 @@ onMount(() => {
 
   socket.connect()
 
-  console.log({ socket })
-  let channel = socket.channel("feed:all", {})
+  let channel = socket.channel('feed:all', {})
   channel.join()
-    .receive("ok", resp => {
-      console.log("Joined successfully", resp)
-      resp.events.forEach(element => {
-        console.log({ event })
-      });
+    .receive('ok', ({ events }) => {
+      feedItems = events
+      storeEvents.update(e => feedItems)
     })
-    .receive("error", resp => { console.log("Unable to join", resp) })
+    .receive('error', resp => { console.log('Unable to join', resp) })
 
-  channel.on("new_event", resp => {
-    console.log("New Event", resp)
-    console.log(resp.event)
-  })	
+  channel.on('new_event', ({ event }) => {
+    console.log('New Event', event)
+    feedItems = [event, ...feedItems]
+    storeEvents.update(e => feedItems)
+  })
 })
 </script>
 
 <main>
-  <FeedCard cardType="join_game"/>
+  {#each feedItems as event (`${event.id}-${Math.random() * 100}`) }
+    <FeedCard
+      cardType={event.type}
+      event={event} />
+  {/each}
+
+  <!-- <FeedCard cardType="join_game"/>
 
   <FeedCard cardType="odds_boost"/>
 
@@ -43,7 +49,7 @@ onMount(() => {
 
   <FeedCard cardType="tweet"/>
 
-  <FeedCard cardType="win_bet"/>
+  <FeedCard cardType="win_bet"/> -->
 </main>
 
 <style>

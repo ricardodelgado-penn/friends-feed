@@ -2,7 +2,8 @@
 import IconAndTitle from "./components/IconAndTitle.svelte";
 import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
 
-
+export let event
+console.log({ event })
 </script>
 
 <section class="join-game">
@@ -13,16 +14,16 @@ import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
   <IconAndTitle>
     <span slot="icon">Icon</span>
 
-    <span slot="title">Mike12 is playing Double Stacks</span>
+    <span slot="title">{event.username} {event.title}</span>
   </IconAndTitle>
 
   <div class="join-link">
-    <a href="test">Join Now</a>
+    <a href="{event.deeplink_url}">Join Now</a>
   </div>
 
   <ThumbsUpFooter>
     <span slot="count">
-      26
+      {event.likes}
     </span>
   </ThumbsUpFooter>
 </section>

@@ -3,6 +3,8 @@ import FButton from '../FButton.svelte';
 import IconAndTitle from './components/IconAndTitle.svelte';
 import ThumbsUpFooter from './components/ThumbsUpFooter.svelte';
 import TimeAgoStamp from './components/TimeAgoStamp.svelte';
+
+export let event
 </script>
 
 <section class="place-bet">
@@ -11,26 +13,26 @@ import TimeAgoStamp from './components/TimeAgoStamp.svelte';
   <IconAndTitle>
     <span slot="icon">Icon</span>
 
-    <span slot="title">User1234 Has Placed a Bet</span>
+    <span slot="title">{event.username} {event.title}</span>
   </IconAndTitle>
 
   <div class="details">
     <div class="left">
-      <div class="font-caption">PHI 76ers @ BKN Nets</div>
-      <div class="font-caption font-bold">POINT SPREAD</div>
-      <div class="font-caption">PHI 76ers -1.5</div>
+      <div class="font-caption">{event.data[0]}</div>
+      <div class="font-caption font-bold">{event.data[1].split(', ')[0]}</div>
+      <div class="font-caption">{event.data[1].split(', ')[1]}</div>
     </div>
 
     <div class="action">
       <FButton odds>
-        Odds
+        {event.data[2]}
       </FButton>
     </div>
   </div>
 
   <footer class="footer">
     <ThumbsUpFooter>
-      <span slot="count">23</span>
+      <span slot="count">{event.likes}</span>
     </ThumbsUpFooter>
   </footer>
 </section>

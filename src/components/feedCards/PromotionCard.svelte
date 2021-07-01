@@ -1,10 +1,18 @@
 <script>
 import FButton from "../FButton.svelte";
 
+const goTo = url => window.location.href = url
+
+export let event
+console.log({ event })
 </script>
+
 <figure>Figure</figure>
 
 <p class="font-body-2">
+  {event.username} {event.title}
+
+  ** Mock **
   Players who opt-in, for every $50 wager on Blackjack, will receive $5 casino bonus cash, up to $50.
 </p>
 
@@ -13,12 +21,15 @@ import FButton from "../FButton.svelte";
 </div>
 
 <div class="action-row">
-  <FButton block outline>
+  <FButton
+    block
+    outline
+    on:click={goTo(event.deeplink_url)}>
     More Info
   </FButton>
   
   <FButton block>
-    Opt In
+    Opt In (missing)
   </FButton>
 </div>
 

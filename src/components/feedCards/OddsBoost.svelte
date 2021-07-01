@@ -1,9 +1,11 @@
 <script>
 import CircleLightning from '../../assets/icons/circle-lightning.svelte';
 
+export let event
 </script>
+
 <p class="first-line font-subtitle-1">
-  Invite your friends for an odds boost!
+  Invite your friends for an odds boost! (The response looks off?)
 </p>
 
 <p class="font-body-2">
