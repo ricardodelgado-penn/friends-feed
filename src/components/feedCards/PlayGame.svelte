@@ -1,9 +1,9 @@
 <script>
-import IconAndTitle from "./components/IconAndTitle.svelte";
-import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
-import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
+  import IconAndTitle from "./components/IconAndTitle.svelte";
+  import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
+  import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
-export let event
+  export let event;
 </script>
 
 <TimeAgoStamp />
@@ -12,18 +12,13 @@ export let event
   <icon>Icon</icon>
 
   <span slot="title">{event.username} {event.title}</span>
+  <div style="background-image: {event.thumbnail_url}" />
 </IconAndTitle>
 
-<div class="content font-caption">
-  <span class="font-bold">
-    Blackjack, (missing)
-  </span>
-
-  Top Rated (missing)
-</div>
+<div class="content font-caption" />
 
 <div class="play-link">
-  <a href="{event.deeplink_url}">Play Now</a>
+  <a href={event.deeplink_url} target="_parent">Play Now</a>
 </div>
 
 <ThumbsUpFooter>
@@ -31,8 +26,8 @@ export let event
 </ThumbsUpFooter>
 
 <style>
-.content,
-.play-link {
-  margin-bottom: 0.875rem;
-}
+  .content,
+  .play-link {
+    margin-bottom: 0.875rem;
+  }
 </style>
