@@ -10,7 +10,9 @@
 <TimeAgoStamp />
 
 <IconAndTitle>
-  <span slot="icon">Icon</span>
+  <span slot="icon"
+    ><img class="avatar" src="/img/{event.username}.png" alt="Profile" /></span
+  >
 
   <span slot="title">{event.username} {event.title}</span>
 </IconAndTitle>
@@ -26,5 +28,13 @@
 <style>
   .tweet-body {
     margin-bottom: 0.875rem;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border: solid 1px grey;
   }
 </style>
