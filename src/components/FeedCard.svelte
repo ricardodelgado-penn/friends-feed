@@ -61,7 +61,6 @@
     box-sizing: border-box;
     margin-bottom: 8px;
     padding: var(--feed-card-padding);
-    max-width: 100%;
     width: 100%;
   }
 </style>

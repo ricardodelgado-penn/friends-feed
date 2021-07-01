@@ -34,7 +34,7 @@ onMount(() => {
 
 <main>
   <FeedHeader>
-    <FeedTabs />
+    <FeedTabs slot="tabs" />
   </FeedHeader>
 
   {#each feedItems as event (`${event.id}-${Math.random() * 100}`) }
