@@ -1,16 +1,22 @@
 <script>
-import IconAndTitle from './components/IconAndTitle.svelte';
-import ThumbsUpFooter from './components/ThumbsUpFooter.svelte';
-import TimeAgoStamp from './components/TimeAgoStamp.svelte';
+  import IconAndTitle from "./components/IconAndTitle.svelte";
+  import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
+  import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
-export let event
+  export let event;
 </script>
 
 <div class="upper-win-card">
   <TimeAgoStamp />
 
   <IconAndTitle>
-    <span slot="icon">Icon</span>
+    <span slot="icon"
+      ><img
+        class="avatar"
+        src="/img/{event.username}.png"
+        alt="Profile"
+      /></span
+    >
 
     <span slot="title">{event.username} {event.title}</span>
   </IconAndTitle>
@@ -32,7 +38,7 @@ export let event
   <div>
     {event.data[2]}
   </div>
-  
+
   <div class="win-bet-detail">
     {event.data[1]}
   </div>
@@ -49,30 +55,38 @@ export let event
 </div>
 
 <style>
+  .lower-win-bet {
+    line-height: 1.65;
+    padding: 16px;
+  }
 
-.lower-win-bet {
-  line-height: 1.65;
-  padding: 16px;
-}
+  .wagered {
+    line-height: 1.5;
+  }
+  .upper-win-card {
+    background: #b6dfb0;
+    color: #2e762f;
+    padding: 16px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.wagered {
-  line-height: 1.5;
-}
-.upper-win-card {
-  background: #b6dfb0;
-  color: #2E762F;
-  padding: 16px;
-}
-.row {
-  display: flex;
-  justify-content: space-between;
-}
+  .odds-row {
+    margin-bottom: 0.875rem;
+  }
 
-.odds-row {
-  margin-bottom: 0.875rem;
-}
+  .odds {
+    color: #1555d0;
+  }
 
-.odds {
-  color: #1555D0;
-}
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border: solid 1px grey;
+  }
 </style>
