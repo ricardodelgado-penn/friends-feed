@@ -1,6 +1,8 @@
 <article class="userinfo">
   <div class="userinfo-inner">
-    <div class="left">Avatar</div>
+    <div class="left user-avatar">
+      <img src="/img/dave.jpeg" alt="User Avatar" />
+    </div>
 
     <div class="right">
       <div class="username font-button">DPORTNOY21</div>
@@ -8,7 +10,11 @@
       <div class="standings font-caption">20 wins | 10 losses | 1 active bet</div>
 
       <div class="friends font-caption">
-        <span>*icons*</span>
+        <div class="friends-icons">
+          <img class="avatar" src="/img/chad.png" alt="Friend 1" />
+          <img class="avatar" src="/img/droda.png" alt="Friend 2" />
+          <img class="avatar" src="/img/ricardo.png" alt="Friend 3" />
+        </div>
 
         <span>20 friends</span>
       </div>
@@ -27,6 +33,10 @@
   color: white;
   padding: 16px 0 0;
 }
+.user-avatar img {
+  border-radius: 50%;
+  width: 100%;
+}
 
 .userinfo-inner {
   display: grid;
@@ -39,7 +49,17 @@
 
 .friends {
   display: flex;
-  gap: 16px;
+  gap: 10px;
+}
+
+.friends-icons {
+  display: inline;
+}
+
+.friends-icons img {
+  border-radius: 50%;
+  margin-left: -9px;
+  width: 15px;
 }
 
 .userinfo > * {

@@ -27,8 +27,8 @@
       });
 
     channel.on("new_event", ({ event }) => {
-      // feedItems = [event, ...feedItems];
-      // storeEvents.update((e) => feedItems);
+      feedItems = [event, ...feedItems];
+      storeEvents.update((e) => feedItems);
     });
   });
 </script>
