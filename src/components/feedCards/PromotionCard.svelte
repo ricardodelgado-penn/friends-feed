@@ -1,10 +1,12 @@
 <script>
 import FButton from "../FButton.svelte";
 
-const goTo = url => window.location.href = url
+const goTo = url => {
+  console.log({ url })
+  window.location.href = url
+}
 
 export let event
-console.log({ event })
 </script>
 
 <figure>Figure</figure>
@@ -24,7 +26,7 @@ console.log({ event })
   <FButton
     block
     outline
-    on:click={goTo(event.deeplink_url)}>
+    click={() => goTo(event.deeplink_url)}>
     More Info
   </FButton>
   

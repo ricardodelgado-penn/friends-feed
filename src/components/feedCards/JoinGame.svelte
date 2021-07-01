@@ -3,7 +3,6 @@ import IconAndTitle from "./components/IconAndTitle.svelte";
 import ThumbsUpFooter from "./components/ThumbsUpFooter.svelte";
 
 export let event
-console.log({ event })
 </script>
 
 <section class="join-game">

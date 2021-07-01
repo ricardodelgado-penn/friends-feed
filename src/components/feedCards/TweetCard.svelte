@@ -3,7 +3,10 @@ import IconAndTitle from "./components/IconAndTitle.svelte";
 
 import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
+export let event
+console.log({ event })
 </script>
+
 <TimeAgoStamp />
 
 <IconAndTitle>
