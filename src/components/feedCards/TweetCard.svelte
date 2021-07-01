@@ -1,10 +1,10 @@
 <script>
-import IconAndTitle from "./components/IconAndTitle.svelte";
+  import IconAndTitle from "./components/IconAndTitle.svelte";
 
-import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
+  import TimeAgoStamp from "./components/TimeAgoStamp.svelte";
 
-export let event
-console.log({ event })
+  export let event;
+  console.log({ event });
 </script>
 
 <TimeAgoStamp />
@@ -12,19 +12,19 @@ console.log({ event })
 <IconAndTitle>
   <span slot="icon">Icon</span>
 
-  <span slot="title">Barstool Sportsbook</span>
+  <span slot="title">{event.username} {event.title}</span>
 </IconAndTitle>
 
 <div class="tweet-body font-body-2">
-  Ben Simmons has not missed a three pointer all season, you can get him +800 tonight on the Barstool Sportsbook @betthehoops
+  {event.body}
 </div>
 
 <div class="tweet-link">
-  <a href="test">View on Twitter</a>
+  <a href={event.deeplink_url} target="_blank">View on Twitter</a>
 </div>
 
 <style>
-.tweet-body {
-  margin-bottom: 0.875rem;
-}
+  .tweet-body {
+    margin-bottom: 0.875rem;
+  }
 </style>

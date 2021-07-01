@@ -1,47 +1,47 @@
 <script>
-import JoinGame from './feedCards/JoinGame.svelte';
-import OddsBoost from './feedCards/OddsBoost.svelte';
-import PlaceBet from './feedCards/PlaceBet.svelte'
-import PlayGame from './feedCards/PlayGame.svelte';
-import PromotionCard from './feedCards/PromotionCard.svelte';
-import TweetCard from './feedCards/TweetCard.svelte';
-import WinBet from './feedCards/WinBet.svelte';
+  import JoinGame from "./feedCards/JoinGame.svelte";
+  import OddsBoost from "./feedCards/OddsBoost.svelte";
+  import PlaceBet from "./feedCards/PlaceBet.svelte";
+  import PlayGame from "./feedCards/PlayGame.svelte";
+  import PromotionCard from "./feedCards/PromotionCard.svelte";
+  import TweetCard from "./feedCards/TweetCard.svelte";
+  import WinBet from "./feedCards/WinBet.svelte";
 
-export let cardType = 'place_bet'
-export let event
+  export let cardType = "place_bet";
+  export let event;
 
-const feedCardClasses = ['feed-card']
+  const feedCardClasses = ["feed-card"];
 
-$: if (cardType === 'win_bet') feedCardClasses.push('no-margin')
+  $: if (cardType === "win_bet") feedCardClasses.push("no-margin");
 </script>
 
-<article class={feedCardClasses.join(' ')}>
-  {#if cardType === 'place_bet'}
-    <PlaceBet event={event} />
+<article class={feedCardClasses.join(" ")}>
+  {#if cardType === "place_bet"}
+    <PlaceBet {event} />
   {/if}
 
-  {#if cardType === 'win_bet'}
-    <WinBet event={event} />
+  {#if cardType === "win_bet"}
+    <WinBet {event} />
   {/if}
 
-  {#if cardType === 'play_game'}
-    <PlayGame event={event} />
+  {#if cardType === "play_game"}
+    <PlayGame {event} />
   {/if}
 
-  {#if cardType === 'join_game'}
-    <JoinGame event={event} />
+  {#if cardType === "join_game"}
+    <JoinGame {event} />
   {/if}
 
-  {#if cardType === 'odds_boost'}
-    <OddsBoost event={event} />
+  {#if cardType === "odds_boost"}
+    <OddsBoost {event} />
   {/if}
 
-  {#if cardType === 'promotion'}
-    <PromotionCard event={event} />
+  {#if cardType === "promotion"}
+    <PromotionCard {event} />
   {/if}
 
-  {#if cardType === 'tweet'}
-    <TweetCard event={event} />
+  {#if cardType === "tweet"}
+    <TweetCard {event} />
   {/if}
 </article>
 
@@ -54,14 +54,14 @@ $: if (cardType === 'win_bet') feedCardClasses.push('no-margin')
     --feed-card-padding: 0;
   }
   .feed-card {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  margin-bottom: 8px;
-  padding: var(--feed-card-padding);
-  max-width: 100%;
-  width: 288px;
-}
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    padding: var(--feed-card-padding);
+    max-width: 100%;
+    width: 100%;
+  }
 </style>
